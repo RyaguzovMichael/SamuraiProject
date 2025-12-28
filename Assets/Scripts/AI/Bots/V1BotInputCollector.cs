@@ -20,10 +20,11 @@ namespace SamuraiProject.AI.Bots
         [SerializeField] private LayerMask _obstacleLayer;
 
         private float[] _inputs;
+        private ITargetable? _currentTarget;
 
         public event Action<ITargetable>? ChangeTarget;
 
-        public ITargetable? CurrentTarget { get; private set; }
+        public ITargetable? CurrentTarget => _currentTarget;
 
         public ReadOnlySpan<float> Collect()
         {
@@ -37,11 +38,6 @@ namespace SamuraiProject.AI.Bots
             return CurrentTarget != null &&
                    CurrentTarget.Transform != null &&
                    CurrentTarget.CombatController.State != CombatState.Dead;
-        }
-
-        public void Init(LayerMask targetLayer)
-        {
-            _scanner.SetTargetMask(targetLayer);
         }
 
         private void Awake()
@@ -68,8 +64,8 @@ namespace SamuraiProject.AI.Bots
 
             if (CurrentTarget != potentialTarget)
             {
-                CurrentTarget = potentialTarget;
-                ChangeTarget?.Invoke(CurrentTarget);
+                _currentTarget = potentialTarget;
+                ChangeTarget?.Invoke(_currentTarget);
             }
         }
 
@@ -124,6 +120,5 @@ namespace SamuraiProject.AI.Bots
             CombatState ss = _combat.State;
             for (int i = 0; i < 7; i++) _inputs[index++] = (int)ss == i ? 1f : 0f;
         }
-
     }
 }

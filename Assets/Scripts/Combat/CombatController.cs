@@ -255,13 +255,6 @@ namespace SamuraiProject.Combat
         {
             _state = CombatState.Dead;
             OnDie?.Invoke();
-            // Запуск анимации смерти
-        }
-
-        private void OnDrawGizmos()
-        {
-            if (!Application.isPlaying) return;
-
         }
     }
 

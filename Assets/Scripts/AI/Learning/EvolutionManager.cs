@@ -3,10 +3,11 @@ using System;
 using System.Text;
 using UnityEngine;
 using System.IO;
-using System.Collections.Generic;
 using SamuraiProject.AI.Configs;
 using SamuraiProject.AI.Abstractions;
 using UnityEngine.AI.Abstractions;
+using SamuraiProject.Combat;
+
 
 
 
@@ -198,6 +199,8 @@ namespace SamuraiProject.AI.Learning
                         Quaternion.identity
                     );
                     IBot bot = botObject.GetComponent<IBot>();
+                    TargetScanner targetScanner = botObject.GetComponent<TargetScanner>();
+                    targetScanner.SetTargetMask(_config.EnemyLayer);
                     _bots[i] = bot;
                     // TODO: handle null to create new brain
                     bot.Initialize(

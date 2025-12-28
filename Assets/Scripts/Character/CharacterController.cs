@@ -10,7 +10,7 @@ namespace SamuraiProject.Character
     [RequireComponent(typeof(ICharacterBrain))]
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(CombatController))]
-    public sealed class CharacterContoller : MonoBehaviour
+    public sealed class CharacterController : MonoBehaviour, ITargetable
     {
         [SerializeField]
         private ICharacterBrain _characterBrain = null!;
@@ -27,6 +27,8 @@ namespace SamuraiProject.Character
         public Direction LookDirection => _lookDirection;
         public bool IsMove => _moveVector.magnitude > 0;
         public Vector3 MoveVector => _moveVector;
+        public Transform Transform => transform;
+        public CombatController CombatController => _combatController;
 
         private void Awake()
         {

@@ -1072,6 +1072,7 @@
     <ProjectReference Include="Core.csproj" />
     <ProjectReference Include="Character.csproj" />
     <ProjectReference Include="Combat.csproj" />
+    <ProjectReference Include="AI.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

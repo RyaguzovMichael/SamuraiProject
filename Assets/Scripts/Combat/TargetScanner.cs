@@ -16,7 +16,6 @@ namespace SamuraiProject.Combat
             _targetLayer = mask;
         }
 
-        // Этот метод мы будем вызывать вручную раз в 0.1 сек
         public void ScanEnvironment(float radius)
         {
             _targets.Clear();
@@ -25,7 +24,6 @@ namespace SamuraiProject.Combat
             filter.SetLayerMask(_targetLayer);
             filter.useLayerMask = true;
 
-            // Моментальный снимок мира в радиусе. Никакой постоянной нагрузки на физику!
             int count = Physics2D.OverlapCircle(transform.position, radius, filter, _resultsBuffer);
 
             for (int i = 0; i < count; i++)
