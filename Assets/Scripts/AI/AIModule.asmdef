@@ -1,0 +1,18 @@
+{
+    "name": "AI",
+    "rootNamespace": "SamuraiProject.AI",
+    "references": [
+        "GUID:7762c2966c48ca1a8b861a4d49d78140",
+        "GUID:1738779bc55b8dd2988e57cda311800a",
+        "GUID:1da40cfb390f854f3bc38fb57ee47e95"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

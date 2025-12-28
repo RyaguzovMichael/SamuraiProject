@@ -1,0 +1,16 @@
+{
+    "name": "Combat",
+    "rootNamespace": "SamuraiProject.Combat",
+    "references": [
+        "GUID:1738779bc55b8dd2988e57cda311800a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
